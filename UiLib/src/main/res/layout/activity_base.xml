@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_activity_base_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/defualt_bg_color">
+
+        <RelativeLayout
+            android:id="@+id/rl_activity_base_net_setting"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/customer_action_bar_size"
+            android:background="@color/alpha_black"
+            android:paddingRight="@dimen/margin_14"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请检查您的网络设置"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/next_white"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <com.ht.uilib.widget.TitleBarView
+        android:id="@+id/tbv_activity_base_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>

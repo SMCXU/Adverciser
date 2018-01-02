@@ -1,0 +1,7 @@
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="16dp"
+    android:textColor="@drawable/tab_title_text_selector"/>

@@ -3,13 +3,19 @@
     package="com.example.zlq_pc.adverciser">
 
     <application
+        android:name=".application.AppApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.GuideActivity">
+
+        </activity>
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.LunchActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

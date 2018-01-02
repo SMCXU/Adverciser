@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!-- 下拉刷新和上拉加载更多的文本 -->
+    <string name="pull_to_refresh_header_hint_normal">下拉刷新</string>
+    <string name="pull_to_refresh_header_hint_normal2">上拉刷新</string>
+    <string name="pull_to_refresh_header_hint_ready">释放刷新</string>
+    <string name="pull_to_refresh_header_hint_loading"><![CDATA[加载中...]]></string>
+    <string name="pull_to_refresh_footer_hint_ready">松开载入更多</string>
+    <string name="pull_to_refresh_refreshing_label">@string/pull_to_refresh_header_hint_loading</string>
+    <string name="pull_to_refresh_no_more_data">已经到底啦</string>
+    <string name="pull_to_refresh_network_error">网络不给力，请检查网络</string>
+    
+</resources>

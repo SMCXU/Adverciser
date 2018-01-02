@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Adverciser.iml" filepath="$PROJECT_DIR$/Adverciser.iml" />
+      <module fileurl="file://$PROJECT_DIR$/BaseLib/BaseLib.iml" filepath="$PROJECT_DIR$/BaseLib/BaseLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ImgLib/ImgLib.iml" filepath="$PROJECT_DIR$/ImgLib/ImgLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JsBridgeLib/JsBridgeLib.iml" filepath="$PROJECT_DIR$/JsBridgeLib/JsBridgeLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/NetLib/NetLib.iml" filepath="$PROJECT_DIR$/NetLib/NetLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PushLib/PushLib.iml" filepath="$PROJECT_DIR$/PushLib/PushLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UiLib/UiLib.iml" filepath="$PROJECT_DIR$/UiLib/UiLib.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

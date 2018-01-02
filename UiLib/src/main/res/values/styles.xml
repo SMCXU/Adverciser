@@ -1,0 +1,50 @@
+<resources>
+
+    <!-- LoadingDialog 开始 -->
+    <style name="LoadingDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@color/transparent</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 模糊 -->
+    </style>
+    <!-- LoadingDialog 结束 -->
+
+    <!-- HomeActivity tab 开始 -->
+    <style name="home_tab_style">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">@dimen/home_activity_tab_container_height</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">@drawable/home_tab_text_color_selector</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <!-- HomeActivity tab 结束 -->
+
+    <!-- TipDialog 开始 -->
+    <style name="albumDialog" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/dialog_alpha_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_alpha_out</item>
+        <!-- 背景颜色及透明程度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 是否有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+    </style>
+
+    <style name="Dialog_Fade">
+        <item name="android:windowEnterAnimation">@anim/dialog_alpha_in</item>
+        <item name="android:windowExitAnimation">@anim/dialog_alpha_out</item>
+    </style>
+    <!-- TipDialog 结束 -->
+</resources>

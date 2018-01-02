@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_base_color">#ff9900</color>
+    <color name="defualt_bg_color">#efeff4</color>
+    <color name="black_split_line">#dedede</color>
+    <color name="bg_operater_selected">#D9D9D9</color>
+
+    <color name="blue_btn_normal">#0077FF</color>
+    <color name="blue_btn_press">#73cdff</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="black">#000000</color>
+    <color name="black3">#333333</color>
+    <color name="black78">#787878</color>
+    <color name="black9">#999999</color>
+    <color name="black96">#969696</color>
+    <color name="blackbb">#bbbbbb</color>
+    <color name="alpha_black">#88000000</color>
+    <color name="white">#ffffff</color>
+</resources>

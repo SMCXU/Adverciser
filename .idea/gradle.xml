@@ -8,6 +8,12 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/BaseLib" />
+            <option value="$PROJECT_DIR$/ImgLib" />
+            <option value="$PROJECT_DIR$/JsBridgeLib" />
+            <option value="$PROJECT_DIR$/NetLib" />
+            <option value="$PROJECT_DIR$/PushLib" />
+            <option value="$PROJECT_DIR$/UiLib" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

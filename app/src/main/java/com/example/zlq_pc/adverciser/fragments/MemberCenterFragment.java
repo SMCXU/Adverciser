@@ -9,65 +9,45 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.zlq_pc.adverciser.R;
+import com.ht.baselib.utils.UIUtils;
+import com.ht.uilib.base.BaseFragment;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link MemberCenterFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- */
-public class MemberCenterFragment extends Fragment {
-
-    private OnFragmentInteractionListener mListener;
-
-    public MemberCenterFragment() {
-        // Required empty public constructor
-    }
-
+public class MemberCenterFragment extends BaseFragment {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_member_center, container, false);
-    }
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
+        return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
+    protected View initContentView() {
+        return UIUtils.inflate(R.layout.fragment_member_center);
     }
 
     @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
+    protected void initChildView() {
+
     }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+    @Override
+    protected void setChildViewListener() {
+
+    }
+
+    @Override
+    protected boolean isStaticPage() {
+        return true;
+    }
+
+    @Override
+    protected void initTitleBar() {
+        super.initTitleBar();
+        mTitleBarView.setTitleText("我的").setLeftBtnVisibility(View.GONE);
+    }
+
+    @Override
+    protected boolean isShowTitleBarView() {
+        return true;
     }
 }

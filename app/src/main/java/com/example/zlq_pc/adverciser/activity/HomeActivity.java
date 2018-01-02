@@ -1,8 +1,9 @@
-package com.example.zlq_pc.adverciser;
+package com.example.zlq_pc.adverciser.activity;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 
+import com.example.zlq_pc.adverciser.R;
 import com.example.zlq_pc.adverciser.fragments.AdverciserFragment;
 import com.example.zlq_pc.adverciser.fragments.MemberCenterFragment;
 import com.example.zlq_pc.adverciser.fragments.RequestFragment;
@@ -19,10 +20,9 @@ public class HomeActivity extends BaseHomeActivity {
         fragmentList.add(new RequestFragment());
         fragmentList.add(new MemberCenterFragment());
     }
-
     @Override
     protected void addHomeTabInfo(Map<String, Integer> homeTabInfoMap) {
-        homeTabInfoMap.put("顾问",R.drawable.home_tab0_icon_selector);
+        homeTabInfoMap.put("顾问", R.drawable.home_tab0_icon_selector);
         homeTabInfoMap.put("发需求",R.drawable.home_tab1_icon_selector);
         homeTabInfoMap.put("我的",R.drawable.home_tab2_icon_selector);
     }

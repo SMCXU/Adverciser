@@ -1,9 +1,10 @@
-package com.haodai.topadvisor.utils;
+package com.example.zlq_pc.adverciser.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import com.haodai.topadvisor.application.HaodaiApplication;
+import com.example.zlq_pc.adverciser.application.AppApplication;
+
 
 public class SharedPreferencesUtils {
 	private static String CONFIG = "config";
@@ -52,7 +53,7 @@ public class SharedPreferencesUtils {
 
     public static boolean getBool(String key, boolean defValue) {
         if(sharedPreferences == null){
-            sharedPreferences = HaodaiApplication.getContext().getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
+            sharedPreferences = AppApplication.getContext().getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
         }
         return sharedPreferences.getBoolean(key, defValue);
     }

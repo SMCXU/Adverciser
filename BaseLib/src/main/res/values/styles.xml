@@ -1,0 +1,11 @@
+<resources>
+
+    <!-- Application theme 开始 -->
+    <style name="AppBaseTheme" parent="android:Theme.Light"/>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+    <!-- Application theme 结束 -->
+
+</resources>

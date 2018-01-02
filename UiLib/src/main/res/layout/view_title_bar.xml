@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/blue_btn_normal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/customer_action_bar_size">
+        <TextView
+            android:id="@+id/tv_view_title_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:drawableLeft="@mipmap/back"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/margin_2"
+            android:paddingLeft="@dimen/margin_14"
+            android:paddingRight="@dimen/margin_14"
+            android:textColor="@color/white"
+            android:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tv_view_title_bar_finish"
+            android:layout_toRightOf="@+id/tv_view_title_bar_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="15dp"
+            android:drawableLeft="@mipmap/finish"
+            android:layout_centerVertical="true"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/margin_2"
+            android:paddingRight="@dimen/margin_14"
+            android:textColor="@color/white"
+            android:visibility="gone"
+            android:layout_marginLeft="5dp"/>
+
+        <FrameLayout
+            android:id="@+id/fl_view_title_bar_center_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true">
+            <TextView
+                android:id="@+id/tv_view_title_bar_title"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/ht_28"
+                android:layout_marginRight="@dimen/ht_28"
+                android:singleLine="true"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:visibility="visible"/>
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:id="@+id/fl_view_title_bar_right_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="14dp"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.ht.uilib.widget.XViewPager
+        android:id="@+id/vp_activity_base_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <com.ht.uilib.widget.indicator.IconPageIndicator
+        android:id="@+id/vpi_activity_base_guide"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"/>
+
+</RelativeLayout>

@@ -5,4 +5,5 @@ package com.example.zlq_pc.adverciser.utils;
  */
 
 public class KEYS {
+    public static final String KEY_ISFIRST = "isFirst";
 }

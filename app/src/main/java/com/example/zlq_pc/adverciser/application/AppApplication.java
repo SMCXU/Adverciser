@@ -1,4 +1,4 @@
-package com.haodai.topadvisor.application;
+package com.example.zlq_pc.adverciser.application;
 
 import android.util.Log;
 

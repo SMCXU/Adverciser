@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_list_operater_start"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@color/defualt_bg_color"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_15"
+        android:background="@drawable/bg_btn_color_selector">
+
+        <ImageView
+            android:id="@+id/iv_list_operater_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/margin_14"/>
+
+        <TextView
+            android:id="@+id/tv_list_operater_title"
+            android:layout_width="@dimen/ht_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:text="设置"/>
+
+        <TextView
+            android:id="@+id/tv_list_operater_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black9"
+            android:layout_gravity="center_vertical"/>
+
+        <ImageView
+            android:id="@+id/iv_list_operater_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/margin_10"
+            android:src="@mipmap/next_black"/>
+
+        <CheckBox
+            android:id="@+id/cb_list_operater_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/cb_list_operator_item"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_list_operator_item_split_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:paddingLeft="@dimen/margin_15"
+        android:paddingRight="@dimen/margin_15"
+        android:background="@color/white">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@color/black_split_line"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_list_operater_end"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/defualt_bg_color"/>
+</LinearLayout>
