@@ -9,12 +9,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.example.zlq_pc.adverciser.R;
+import com.example.zlq_pc.adverciser.adapter.BannerAdapter;
+import com.example.zlq_pc.adverciser.entity.LunboBean;
 import com.example.zlq_pc.adverciser.weight.AutoScrollViewPager;
 import com.ht.baselib.utils.UIUtils;
 import com.ht.uilib.base.BaseFragment;
 import com.ht.uilib.widget.TitleBarView;
+import com.ht.uilib.widget.pullrefresh.PullToRefreshListView;
+
+import java.util.ArrayList;
 
 
 public class AdverciserFragment extends BaseFragment {
@@ -22,6 +28,9 @@ public class AdverciserFragment extends BaseFragment {
 
     private View mHeadView;
     private AutoScrollViewPager mVPcontainer;
+    private ArrayList<LunboBean> mList;
+    private BannerAdapter bannerAdapter;
+    private ListView mListView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -32,8 +41,25 @@ public class AdverciserFragment extends BaseFragment {
     private void initView() {
         mHeadView = UIUtils.inflate(R.layout.head_fragment_adverciser);
         mVPcontainer = (AutoScrollViewPager)mHeadView.findViewById(R.id.vp_container);
+        mListView = (ListView) initContentView().findViewById(R.id.mPTRListView);
+        mVPcontainer.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
+            }
 
+            @Override
+            public void onPageSelected(int position) {
+
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+        mListView.addHeaderView(mHeadView);
     }
 
     @Override
@@ -78,6 +104,14 @@ public class AdverciserFragment extends BaseFragment {
     @Override
     public void setArguments(Bundle args) {
         super.setArguments(args);
+    }
+
+    @Override
+    protected void load() {
+        super.load();
+        mList = new ArrayList<>();
+        bannerAdapter = new BannerAdapter(getContext(), mList);
+        mVPcontainer.setAdapter(bannerAdapter);
     }
 
     @Override
