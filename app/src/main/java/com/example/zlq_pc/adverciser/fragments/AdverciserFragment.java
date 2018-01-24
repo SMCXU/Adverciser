@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.zlq_pc.adverciser.R;
+import com.example.zlq_pc.adverciser.weight.AutoScrollViewPager;
 import com.ht.baselib.utils.UIUtils;
 import com.ht.uilib.base.BaseFragment;
 import com.ht.uilib.widget.TitleBarView;
@@ -20,7 +21,7 @@ public class AdverciserFragment extends BaseFragment {
 
 
     private View mHeadView;
-    private ViewPager mVPcontainer;
+    private AutoScrollViewPager mVPcontainer;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -30,7 +31,8 @@ public class AdverciserFragment extends BaseFragment {
 
     private void initView() {
         mHeadView = UIUtils.inflate(R.layout.head_fragment_adverciser);
-        mVPcontainer = (ViewPager)mHeadView.findViewById(R.id.vp_container);
+        mVPcontainer = (AutoScrollViewPager)mHeadView.findViewById(R.id.vp_container);
+
 
     }
 

@@ -1,12 +1,10 @@
 package com.example.zlq_pc.adverciser.activity;
 import android.os.Bundle;
-
 import com.example.zlq_pc.adverciser.R;
 import com.example.zlq_pc.adverciser.utils.KEYS;
 import com.ht.baselib.utils.ActivityUtils;
 import com.ht.baselib.utils.SharedPreferencesUtils;
 import com.ht.uilib.base.BaseGuideActivity;
-
 import java.util.List;
 
 public class GuideActivity extends BaseGuideActivity {

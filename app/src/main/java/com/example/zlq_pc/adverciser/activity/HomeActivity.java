@@ -26,4 +26,5 @@ public class HomeActivity extends BaseHomeActivity {
         homeTabInfoMap.put("发需求",R.drawable.home_tab1_icon_selector);
         homeTabInfoMap.put("我的",R.drawable.home_tab2_icon_selector);
     }
+
 }
