@@ -1,71 +1,47 @@
 package com.example.zlq_pc.adverciser.fragments;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.ListView;
 
 import com.example.zlq_pc.adverciser.R;
+import com.example.zlq_pc.adverciser.adapter.ArticleAdapter;
 import com.example.zlq_pc.adverciser.adapter.BannerAdapter;
+import com.example.zlq_pc.adverciser.constant.ConstantPool;
+import com.example.zlq_pc.adverciser.entity.ArticleBean;
 import com.example.zlq_pc.adverciser.entity.LunboBean;
 import com.example.zlq_pc.adverciser.weight.AutoScrollViewPager;
+import com.ht.baselib.utils.AppUtils;
+import com.ht.baselib.utils.ChannelUtils;
+import com.ht.baselib.utils.DeviceUtils;
+import com.ht.baselib.utils.MD5Utils;
 import com.ht.baselib.utils.UIUtils;
+import com.ht.netlib.RequestManager;
+import com.ht.netlib.builder.GetBuilder;
+import com.ht.netlib.callback.JsonCallback;
 import com.ht.uilib.base.BaseFragment;
+import com.ht.uilib.base.BaseRefreshListViewFragment;
 import com.ht.uilib.widget.TitleBarView;
-import com.ht.uilib.widget.pullrefresh.PullToRefreshListView;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 
-public class AdverciserFragment extends BaseFragment {
+public class AdverciserFragment extends BaseRefreshListViewFragment {
 
 
     private View mHeadView;
-    private AutoScrollViewPager mVPcontainer;
-    private ArrayList<LunboBean> mList;
-    private BannerAdapter bannerAdapter;
     private ListView mListView;
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        initView();
-        return super.onCreateView(inflater, container, savedInstanceState);
-    }
-
-    private void initView() {
-        mHeadView = UIUtils.inflate(R.layout.head_fragment_adverciser);
-        mVPcontainer = (AutoScrollViewPager)mHeadView.findViewById(R.id.vp_container);
-        mListView = (ListView) initContentView().findViewById(R.id.mPTRListView);
-        mVPcontainer.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-        mListView.addHeaderView(mHeadView);
-    }
-
-    @Override
-    protected View initContentView() {
-        return UIUtils.inflate(R.layout.fragment_adverciser);
-    }
+    private int mLoadTime;
+    private boolean mHasMoreData = true;
 
     @Override
     protected void initChildView() {
@@ -83,6 +59,107 @@ public class AdverciserFragment extends BaseFragment {
         return true;
     }
 
+    @Override
+    protected View getHeaderView() {
+        mHeadView = UIUtils.inflate(R.layout.head_fragment_adverciser);
+        return mHeadView;
+    }
+
+    @Override
+    protected void initChildDataFromCache() {
+
+    }
+
+    @Override
+    protected BaseAdapter getAdapter() {
+        return new ArticleAdapter(getContext(), mDataList);
+    }
+
+    @Override
+    protected void loadData() {
+        mLoadTime = 0;
+        mHasMoreData = true;
+        refreshData(mLoadTime);
+    }
+
+    @Override
+    protected void onLoadMore() {
+        mLoadTime++;
+        mHasMoreData = true;
+        refreshData(mLoadTime);
+    }
+
+    private void refreshData(final int loadTime) {
+        Map<String, String> map = new HashMap();
+        map.put("device_id",DeviceUtils.getDeviceId());
+        map.put("device_channel",ChannelUtils.getChannel());
+        map.put("device_type","android");
+        map.put("appVersion",DeviceUtils.getAppVersionName());
+        RequestManager
+                .post()
+                .url("http://guwen.haodai.comTopic/home2")
+                .addParams("device_id", DeviceUtils.getDeviceId())
+                .addParams("device_channel", ChannelUtils.getChannel())
+                .addParams("device_type", "android")
+                .addParams("appVersion", DeviceUtils.getAppVersionName())
+                .addParams("sign",sign(map) )
+                .build()
+                .execute(new JsonCallback<List<ArticleBean>>() {
+
+                    @Override
+                    public void onSuccess(List<ArticleBean> articleBeenList) {
+                        if (loadTime == 0) {
+                            if (articleBeenList.size() > 0) {
+                                mDataList.clear();
+                                mDataList.addAll(articleBeenList);
+                                onRefreshCompleteSuccess();
+                            } else {
+                                onRefreshCompleteEmpty();
+                            }
+                        } else {
+                            if (articleBeenList.size() > 0) {
+                                mDataList.addAll(articleBeenList);
+                            } else {
+                                mHasMoreData = false;
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onFinishMainThread(boolean isSuccess) {
+                        if (loadTime == 0) {
+                            if (!isSuccess) {
+                                onRefreshCompleteError();
+                            }
+                        } else {
+                            onLoadMoreComplete();
+                        }
+                    }
+                });
+    }
+
+    public static String sign(Map<String, String> map){
+        StringBuilder md5Key = new StringBuilder();
+        if (map.size() != 0){
+            List<String> keyList = new ArrayList<>();
+            for (Map.Entry<String, String> entry : map.entrySet()){
+                keyList.add(entry.getKey());
+            }
+
+            Collections.sort(keyList);
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < keyList.size(); i++) {
+                String key = keyList.get(i);
+                sb.append(key).append("=").append(map.get(key)).append("&");
+            }
+            sb.deleteCharAt(sb.length() - 1);
+            md5Key.append(ConstantPool.SIGN_KEY).append(sb).append(ConstantPool.SIGN_KEY);
+        }else {
+            md5Key.append(ConstantPool.SIGN_KEY).append(ConstantPool.SIGN_KEY);
+        }
+
+        return MD5Utils.encode(md5Key.toString().toUpperCase());
+    }
     @Override
     protected void initTitleBar() {
         super.initTitleBar();
@@ -109,15 +186,15 @@ public class AdverciserFragment extends BaseFragment {
     @Override
     protected void load() {
         super.load();
-        mList = new ArrayList<>();
-        bannerAdapter = new BannerAdapter(getContext(), mList);
-        mVPcontainer.setAdapter(bannerAdapter);
+        mLoadTime = 0;
+        mHasMoreData = true;
+        refreshData(mLoadTime);
     }
 
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        if (v.getId()==R.id.tv_view_title_bar_back){
+        if (v.getId() == R.id.tv_view_title_bar_back) {
             UIUtils.showToast("I hate myself for loving you");
         }
     }
