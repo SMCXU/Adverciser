@@ -5,9 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/white"
     tools:context="com.example.zlq_pc.adverciser.activity.LoginActivity">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="11111"/>
+   <LinearLayout
+       android:background="@color/white"
+       android:orientation="horizontal"
+       android:layout_width="match_parent"
+       android:layout_height="48dp">
+       <LinearLayout
+           android:id="@+id/ll_login"
+           android:orientation="vertical"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="match_parent">
+
+           <TextView
+               android:id="@+id/tv_login"
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:gravity="center"
+               android:text="登录"
+               android:textColor="@color/black78"
+               android:textSize="16sp" />
+           <TextView
+               android:id="@+id/tv_line_login"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@color/blue_btn_press"/>
+       </LinearLayout>
+       <LinearLayout
+           android:id="@+id/ll_register"
+           android:orientation="vertical"
+           android:layout_weight="1"
+           android:layout_width="0dp"
+           android:layout_height="match_parent">
+           <TextView
+               android:id="@+id/tv_register"
+               android:layout_width="match_parent"
+               android:layout_height="0dp"
+               android:layout_weight="1"
+               android:text="注册"
+               android:textColor="@color/black78"
+               android:gravity="center"
+               android:textSize="16sp"/>
+           <TextView
+               android:id="@+id/tv_line_registerr"
+               android:layout_width="match_parent"
+               android:layout_height="1dp"
+               android:background="@color/white"/>
+       </LinearLayout>
+   </LinearLayout>
 </LinearLayout>
