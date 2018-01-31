@@ -104,10 +104,10 @@ public class AdverciserFragment extends BaseRefreshListViewFragment {
                 .addParams("appVersion", DeviceUtils.getAppVersionName())
                 .addParams("sign",sign(map) )
                 .build()
-                .execute(new JsonCallback<List<ArticleBean>>() {
+                .execute(new JsonCallback<List<LunboBean>>() {
 
                     @Override
-                    public void onSuccess(List<ArticleBean> articleBeenList) {
+                    public void onSuccess(List<LunboBean> articleBeenList) {
                         if (loadTime == 0) {
                             if (articleBeenList.size() > 0) {
                                 mDataList.clear();

@@ -1,14 +1,39 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.example.zlq_pc.adverciser.fragments.RequestFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/guide_02"
-        android:scaleType="fitXY"/>
-
-</FrameLayout>
+        android:layout_height="283dp"
+        android:layout_marginTop="16dp"
+        android:src="@mipmap/first_private_placement"
+        />
+    <TextView
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        android:text="　　金牌顾问致力于打造共享金融下10000个行长级金融大咖的对接服务，将您的融资需求告诉我们，我们来为您高效定制、匹配对接、快速融资！"/>
+    <TextView
+        android:id="@+id/bt_Request"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/margin_14"
+        android:layout_marginLeft="@dimen/margin_14"
+        android:layout_marginRight="@dimen/margin_14"
+        android:layout_marginTop="26dp"
+        android:background="@drawable/bg_base_color_and_content_but_no_circle"
+        android:gravity="center"
+        android:paddingBottom="@dimen/margin_10"
+        android:paddingTop="@dimen/margin_10"
+        android:text="立即发布需求"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+</LinearLayout>
