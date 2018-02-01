@@ -4,69 +4,41 @@ import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.zlq_pc.adverciser.R;
+import com.example.zlq_pc.adverciser.fragments.LoginFragment;
+import com.example.zlq_pc.adverciser.fragments.RegisterFragment;
 import com.ht.uilib.base.BaseActivity;
+import com.ht.uilib.base.BaseTabActivity;
 
-public class LoginActivity extends BaseActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-    private TextView tvLineLogin,tvLineRegister,tvRegister,tvLogin;
-    private LinearLayout llLogin,llRegisterrr;
+public class LoginActivity extends BaseTabActivity {
+
+    @Override
+    protected List<String> getTabTitleList() {
+        ArrayList<String> mList = new ArrayList<>();
+        mList.add("登录");
+        mList.add("注册");
+        return mList;
+    }
+
+    @Override
+    protected List<Fragment> getFragmentList() {
+        ArrayList<Fragment> fragments = new ArrayList<>();
+        fragments.add(new LoginFragment());
+        fragments.add(new RegisterFragment());
+        return fragments;
+    }
 
     @Override
     protected void initTitleBar() {
-        mTitleBarView.setTitleText("登录").setTitleViewVisibility(View.VISIBLE);
-    }
-
-    @Override
-    protected boolean isStaticPage() {
-        return true;
-    }
-
-    @Override
-    protected int initContentView() {
-        return R.layout.activity_login;
-    }
-
-    @Override
-    protected void initChildView() {
-        tvLineLogin =(TextView) findViewById(R.id.tv_line_login);
-        tvLineRegister =(TextView) findViewById(R.id.tv_line_registerr);
-        tvRegister =(TextView) findViewById(R.id.tv_register);
-        tvLogin =(TextView) findViewById(R.id.tv_login);
-        llLogin = (LinearLayout) findViewById(R.id.ll_login);
-        llRegisterrr = (LinearLayout) findViewById(R.id.ll_register);
-
-    }
-
-    @Override
-    protected void initChildData() {
-
-    }
-
-    @Override
-    protected void setChildViewListener() {
-        llRegisterrr.setOnClickListener(this);
-        llLogin.setOnClickListener(this);
-    }
-
-    @SuppressLint("ResourceAsColor")
-    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-    @Override
-    public void onClick(View v) {
-        super.onClick(v);
-        switch (v.getId()){
-            case R.id.ll_login:
-                tvLineRegister.setBackground(getResources().getDrawable(R.color.white));
-                tvLineLogin.setBackground(getResources().getDrawable(R.color.blue_btn_press));
-                break;
-            case R.id.ll_register:
-                tvLineRegister.setBackground(getResources().getDrawable(R.color.blue_btn_press));
-                tvLineLogin.setBackground(getResources().getDrawable(R.color.white));
-                break;
-        }
+        super.initTitleBar();
+        mTitleBarView.setTitleText("登录");
     }
 }

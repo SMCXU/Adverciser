@@ -3,4 +3,44 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="defualt_bg_color">#f2f2f2</color>
+    <color name="bg_operater_selected">#D9D9D9</color>
+    <color name="app_base_color">#00A4FF</color>
+    <color name="home_tab_text_color">#0999e9</color>
+    <color name="base_color_txt">#00a4ff</color>
+    <color name="app_base_color_dan">#d9eaf3</color>
+
+    <color name="blue_btn">#0077FF</color>
+    <color name="blue_sound_record">#73cdff</color>
+
+    <color name="transparent">#00000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="white_ae">#aeaeae</color>
+
+
+
+    <color name="red">#fe0000</color>
+    <color name="orange">#ff6539</color>
+
+    <color name="black">#3d3d3d</color>
+    <color name="black_alpha">#90000000</color>
+    <color name="black3">#333333</color>
+    <color name="black_home_tab">#322A34</color>
+    <color name="black32">#323232</color>
+    <color name="black39">#33999999</color>
+    <color name="black4e">#4e4e4e</color>
+    <color name="black6">#666666</color>
+    <color name="black78">#787878</color>
+    <color name="black7c">#c7c7c7</color>
+    <color name="black8">#888888</color>
+    <color name="black9">#999999</color>
+    <color name="blackae">#aeaeae</color>
+    <color name="black_bb">#bbbbbb</color>
+    <color name="black_split_line">#dedede</color>
+    <color name="black_bg">#D2D5DB</color>
+    <color name="blackde">#dedede</color>
+
+    <color name="blue_btn_normal">#0077FF</color>
+
 </resources>

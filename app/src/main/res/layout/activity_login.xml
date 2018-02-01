@@ -26,7 +26,7 @@
                android:layout_weight="1"
                android:gravity="center"
                android:text="登录"
-               android:textColor="@color/black78"
+               android:textColor="@color/blue_btn_press"
                android:textSize="16sp" />
            <TextView
                android:id="@+id/tv_line_login"
@@ -56,4 +56,9 @@
                android:background="@color/white"/>
        </LinearLayout>
    </LinearLayout>
+    <com.ht.uilib.widget.XViewPager
+        android:id="@+id/vp_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.ht.uilib.widget.XViewPager>
 </LinearLayout>
