@@ -39,6 +39,6 @@ public class LoginActivity extends BaseTabActivity {
     @Override
     protected void initTitleBar() {
         super.initTitleBar();
-        mTitleBarView.setTitleText("登录");
+        mTitleBarView.setTitleText("登录注册");
     }
 }

@@ -36,6 +36,7 @@
     </RelativeLayout>
 
     <com.ht.uilib.widget.TitleBarView
+        android:background="@color/app_base_color"
         android:id="@+id/tbv_activity_base_title_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

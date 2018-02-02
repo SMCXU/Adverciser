@@ -56,7 +56,7 @@ public class TitleBarView extends LinearLayout implements View.OnClickListener {
         defaultActionPadding = UIUtils.dip2px(DEFAULT_ACTION_PADDING);
 
         mStaturbarView = new View(getContext());
-        mStaturbarView.setBackgroundColor(getResources().getColor(R.color.blue_btn_normal));
+        mStaturbarView.setBackgroundColor(getResources().getColor(R.color.app_base_color));
         mTitleBarContent = UIUtils.inflate(R.layout.view_title_bar);
 
         addView(mStaturbarView, new LinearLayoutCompat.LayoutParams(LinearLayoutCompat.LayoutParams.MATCH_PARENT, 0));

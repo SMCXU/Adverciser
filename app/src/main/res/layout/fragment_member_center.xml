@@ -1,13 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/defualt_bg_color"
+    android:orientation="vertical"
     tools:context="com.example.zlq_pc.adverciser.fragments.MemberCenterFragment">
-
-    <ImageView
+    <RelativeLayout
+        android:gravity="center"
+        android:background="@color/app_base_color"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@mipmap/guide_01"
-        android:scaleType="fitXY"/>
+        android:layout_height="200dp">
+        <ImageView
+            android:id="@+id/iv_photo"
+            android:src="@mipmap/home_icon_loan"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@mipmap/bg_photo_inner"/>
+        <TextView
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_photo"
+            android:layout_marginTop="8dp"
+            android:text="凉风有兴"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            />
+    </RelativeLayout>
 
-</FrameLayout>
+
+</LinearLayout>
